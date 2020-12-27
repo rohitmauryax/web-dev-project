@@ -1,15 +1,26 @@
 <html>
-    <head>
-        <title>Calculator</title>
+     <head>
+    <title>Calculator</title>
         <meta name = "viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="stylee.css">
     </head>
-    <body style="background-color: blueviolet;">
+    <body style="background-image: url(back.jpg);">
+        <div class="heading">
+            <h1> Calculator</h1>
+        </div>
         <div class="box">
+            <div class="brandicons">
+                <h1>CASIO</h1>
+            </div>
             <form name = "form">
-                <input class="textview" name="textview" >
+                <input placeholder=0 class="textview" name="textview" >
             </form>
             <table>
+                <tr>
+                    <td><input  class="btn" type="button" value="OFF" onclick="s_off()"></td>
+                    <td><input  class="btn" type="button" value="ON" onclick="s_on()"></td>
+    
+                </tr>
                 <tr>
                     <td><input class="btn" type="button" value="C" onclick="c()"></td>
                     <td><input class="btn" type="button" value="<" onclick="back()"></td>
@@ -37,7 +48,7 @@
                         <td rowspan="2"><input class="btn" type="button" value="=" onclick="equal()" style="height: 90px;"></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input colspan="2" class="btn" type="button" value="0" onclick="insert(0)" style="width: 105px;"></td>
+                        <td colspan="2"><input class="btn" type="button" value="0" onclick="insert(0)" style="width: 105px;"></td>
                         <td><input class="btn" type="button" value="." onclick="insert('.')"></td>
                         
                     </tr>
@@ -61,7 +72,18 @@
             function back(){
                 var exp = document.form.textview.value;
                 document.form.textview.value = exp.substring(0,exp.length-1);
+                
             }
+            function s_off() { c()
+                
+                document.form.textview.style.background="#000000"
+
+
+        }
+        function s_on() { c()
+            document.form.textview.style.background="#ffffff"  
+        }
+        
         </script>
         
     </body>
